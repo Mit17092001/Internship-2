@@ -1,0 +1,206 @@
+<?php 
+    session_start();
+    if(isset($_SESSION["name"]))
+    ?>
+        
+
+<html>
+    <head>
+        <title>home page</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            body 
+            {
+                margin: 0;
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: #ddd;
+            }
+            .nav-bar 
+            {
+                overflow: hidden;
+                position: fixed;
+                width: 100%;
+                top: 0;
+                left: 0;
+                background-color: #333;      
+            }
+            .hov a:hover 
+            {
+                color: #000;
+                background-color: #ddd;
+            }
+            .nav-bar a
+            {
+                color: #ddd;
+                text-align: center;
+                float: left;
+                text-decoration: none;
+                padding: 14px 16px;
+                font-size: 17px;
+            }
+            .nav-bar a.active
+            {
+                background-color: rgb(22, 120, 177);
+                color: white;
+            }
+            .nav-bar a.img
+            {
+                float: right;  
+                max-height:10px;
+                
+                padding-top:5px;
+            }
+            .nav-bar .search-bar
+            {   
+                margin-left: 600px;
+                margin-top: 11px;           
+            }
+            
+            .dot 
+            {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+            #active, .dot:hover 
+            {
+                background-color: #717171;
+            }
+            td a{
+                margin-left: 50px;
+                margin-top:20px;
+            }
+            #table
+            {
+                margin-top: 80px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .lo .lo{
+                position: fixed;
+                background-color:#333;
+                color:#fff;
+                border-color: #333;
+                padding-left:35px;
+                padding-right:35px;
+                padding-top:10px;
+                padding-bottom:15px;
+                border-bottom-left-radius: 12px;
+                border-bottom-right-radius: 12px;
+                border-style: none;
+                font-size: 17px;
+                margin-left: 90%;
+                top:48px;
+            }
+            .lo .lo:hover
+            {
+                background-color: #ddd;
+                color:#000;
+            }
+            .text td a
+            {
+                text-decoration: none;
+                color:#333;
+                font-size: 20px;
+            }
+            .cont td a
+            {
+                text-decoration: none;
+                color: #333;
+                font-size:13px;
+            }
+            .cont td
+            {
+                max-width: 200px;
+                padding-left: 0px;
+            }
+          
+        </style>
+
+        <!-- <script>
+            function showHint(str) 
+            {
+                if (str.length == 0) 
+                {
+                    document.getElementById("txtHint").innerHTML = "";
+                    return;
+                }   
+                else    
+                {
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.onreadystatechange = function() {
+                    
+                        if (this.readyState == 4 && this.status == 200) 
+                        {
+                            document.getElementById("txtHint").innerHTML = this.responseText;
+                        }
+                    }
+                    xmlhttp.open("GET", "gethint.php?q="+str, true);
+                    xmlhttp.send();
+                }
+            }
+        </script> -->
+    </head>
+    <body>
+       
+   
+        <div class="nav-bar">
+            <a class="img" href="about.php" ><img src="LOGO.jpg"></a>
+            <div class="hov">
+            <a class="active" href="home.php">Home</a>
+            
+            <a href="about.php">about</a>
+            <a href="contact.html">Contact us</a>
+            <a href="prof.php">Profile</a>   
+            </div>
+            <div class="search-bar">
+                <form method="POST" action="action.php">
+                    <input type="text" placeholder="search" name="search" >
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>              
+            </div>
+        </div>
+        
+        <div class="lo">
+            <a href="logout.php"><button class="lo">Logout</button></a>
+        </div>
+        <table id="table">
+            <tr>
+                <td><a href="Plumber.php"><img src="plumber.jpg"> </a></td>
+                <td><a href="Electrician.php"><img src="electriciann.jpg"></a></td>
+                <td><a href="mechanic.php"><img src="mechanic.jpg"></a></td>
+            </tr>
+            <tr class="text">
+                <td><a href="Plumber.php">Plumber</a></td>
+                <td><a href="Electrician.php">Electrician</a></td>
+                <td><a href="mechanic.php">mechanic</a></td>
+            </tr>
+            <tr class="cont">
+                <td><a href="Plumber.php"></a></td>
+                <td><a href="Electrician.php"></a></td>
+                <td><a href="mechanic.php"></a></td>
+            </tr>
+            <tr>
+                <td><a href="mason.php"><img src="mason.jpg"></a></td>
+                <td><a href="security-Guard.php"><img src="Security-Guard.jpg"></a></td>
+                <td><a href="gardner.php"><img src="gardnerr.jpg"></a></td>
+            </tr>
+            <tr  class="text">
+                <td><a href="mason.php" class="tet">mason</a></td>
+                <td><a href="security-Guard.php">Security-Guard</a></td>
+                <td><a href="gardner.php">gardener</a></td>
+            </tr>
+            <tr  class="cont">
+                <td><a href="mason.php" class="tet"></a></td>
+                <td><a href="security-Guard.php"></a></td>
+                <td><a href="gardner.php"></a></td>
+            </tr>
+        </table>
+             
+    </body>
+</html>
