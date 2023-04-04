@@ -6,12 +6,15 @@
     <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link href="app.css" rel="stylesheet">
+    <link href="back.css" rel="stylesheet">
         <title>
             Login
         </title>
-        <style>
+        <!-- <style>
             body{
-                background-image: url("circle.jpg");
+                background-size: cover;
+                background-image: url("circle.jpg");    
                 font-family: Arial,Helvetica,sans-serif;
             }
             h1{
@@ -26,8 +29,7 @@
                 margin-top:5px;
             }
             .body{
-                margin-top:30px;
-                margin-left:35%;
+               
                 border-style:ridge;
                 border-color:#fff;
                 padding-left:20px;
@@ -36,7 +38,8 @@
                 padding-bottom: 10px;
                 background-color: rgba(20,20,20,0.8);
                 border-width: 10px;
-               
+                margin: auto;
+                margin-top: 50px;
                 color: rgb(255,6,140);    
             }
             .php{
@@ -89,9 +92,9 @@
 
             }
             
-        </style>
+        </style> -->
     </head>
-    <body>
+    <body class="index">
         
         <div class="body">
         <h1>Login Form</h1>

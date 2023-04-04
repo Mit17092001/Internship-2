@@ -21,8 +21,11 @@
             x.innerHTML="Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
         }
     </script>
+    <!-- 
+    AIzaSyALcVNvCTrp3W1v7VaHA-khghkVT14VlEk
 
-   <!-- <head>
+    
+        <head>
     <style>
             body{
                 font-family:Arial, Helvetica, sans-serif ;

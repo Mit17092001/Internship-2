@@ -1,6 +1,8 @@
 
 <html>
     <head>
+    <link href="nav.css" rel="stylesheet">
+        
         <style>
             body
             {
@@ -10,31 +12,7 @@
                 margin: 0px;
                
             }
-            .nav-bar 
-            {
-                overflow: hidden;
-                background-color: #333;           
-            }
-            .hov a:hover 
-            {
-                color: #000;
-                background-color: #fff;
-            }
-            .nav-bar a
-            {
-                color: #ddd;
-                text-align: center;
-                float: left;
-                text-decoration: none;
-                padding: 14px 16px;
-                font-size: 17px;
-            }
-            .nav-bar a.img
-            {
-                float: right;  
-                max-height:10px;
-                padding-top:5px;
-            }
+     
             form
             {
                margin-top: 30px;
@@ -49,27 +27,7 @@
                 padding-top:15px;
                 padding-right:20px;
             }
-            .lo .lo
-            {
-                float:right;
-                background-color:#333;
-                color:#fff;
-                border-color: #333;
-                margin-right:20px;
-                padding-left:35px;
-                padding-right:35px;
-                padding-top:10px;
-                padding-bottom:15px;
-                border-bottom-left-radius: 12px;
-                border-bottom-right-radius: 12px;
-                border-style: none;
-                font-size: 17px;
-            }
-            .lo .lo:hover
-            {
-                background-color: #fff;
-                color:red;
-            }
+            
         </style>
     </head>
     <body>

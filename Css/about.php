@@ -6,16 +6,16 @@ h1{
     text-align:center;
     color:#ccc;
 }
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-image: url("back.jpg");
-  background-repeat: no-repeat;
-}
-            p{
+            body 
+            {
+                margin: 0;
+                font-family: Arial, Helvetica, sans-serif;
+                max-width:100%;
+                background-color:rgb(227,65,50);
                 
-                
-             
+            }
+            p
+            { 
                 font-size:15px;
                 color:#fff;
                 line-height: 20px;
@@ -25,16 +25,14 @@ body {
                 
             }
             .port{
-                border-style:ridge;
-                border-width:10px;
-                border-color:rgb(0, 255, 106);
-                background-color:rgb(44, 41, 41);
-                margin-top:30px;
-                margin-left:387px;
-                width:700px;
-                align-items: center;
-                height:380px;
                 
+                width:auto;
+                height:auto;
+                
+            }
+            img
+            {
+                max-width:100%;
             }
             .nav-bar {
             overflow: hidden;
@@ -105,17 +103,7 @@ body {
         <a href="logout.php"><button class="lo">Logout</button></a>
 </div>
     <div class="port">
-        <h1>About PM&E portal.</h1>
-        <p>
-            Hey there. <br>
-            PM&E is mainly porfolio managment and enquiry portal. <br>
-            We are here to provide information about different professionals for your smooth daily life.<br>
-            We have workers/professionals with very economical prize.<br>
-            We are serving in cities like Ahmedabad,Surat,Vadodara etc. <br>
-            Our goal is to reach all cities of India.<br>
-            Currently we are in <span style="color:red ; font-size:20px ">Phase-1</span> we are providing some basic needs.<br>
-            In <span style="color:red ; font-size:20px">Phase-2</span> our plan is to go for luxurious needs also.
-        </p>
+        <img src="back2.jpg">
     </div>
 </body>
 </html>

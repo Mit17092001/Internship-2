@@ -22,42 +22,6 @@
                 color:rgb(8, 45, 63);
                
             }
-            .nav-bar 
-            {
-                overflow: hidden;
-                background-color: #333;      
-            }
-            .hov a:hover 
-            {
-                color: #000;
-                background-color: #ddd;
-            }
-            .nav-bar a
-            {
-                color: #ddd;
-                text-align: center;
-                float: left;
-                text-decoration: none;
-                padding: 14px 16px;
-                font-size: 17px;
-            }
-            .nav-bar a.active
-            {
-                background-color: rgb(22, 120, 177);
-                color: white;
-            }
-            .nav-bar a.img
-            {
-                float: right;  
-                max-height:10px;
-                
-                padding-top:5px;
-            }
-            .nav-bar .search-bar
-            {   
-                margin-left: 600px;
-                margin-top: 11px;           
-            }
             .field
             {
                 width:100%;
@@ -115,8 +79,6 @@
                 padding-bottom: 40px;
                 padding-left: 150px;
                 color:rgb(8, 45, 63);
-               
-              
             }
             .lo .lo{
                 float:right;
@@ -127,6 +89,7 @@
                 padding-left:35px;
                 padding-right:35px;
                 padding-top:10px;
+                top: 0px;
                 padding-bottom:15px;
                 border-bottom-left-radius: 12px;
                 border-bottom-right-radius: 12px;
@@ -153,29 +116,15 @@
         </style>
     </head>
     <body>
-        <div class="nav-bar">
-                <a class="img" href="about.php" ><img src="LOGO.jpg"></a>
-                <div class="hov">
-                <a class="active" href="home.php">Home</a>
-                
-                <a href="about.php">about</a>
-                <a href="contact.html">Contact us</a>
-                <a href="prof.php">Profile</a>   
-                </div>
-                <div class="search-bar">
-                    <form method="POST" action="action.php">
-                        <input type="text" placeholder="search" name="search" >
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                    </form>              
-                </div>
-        </div>
         <div class="lo">
             <a href="logout.php"><button class="lo">Logout</button></a>
         </div>
+
+        <br>
         <div class="wel"><b>
-                <?php
-                    echo "Welcome professional PM&E is here to make your skills useful.";
-                ?></b>
+              <p>Welcome professional PM&E is here to make your skills useful.</p>
+                
+                </b>
             </div>
         <div class="body">    
             
@@ -207,6 +156,7 @@
                         $profile=$_POST['profile'];
                         $mobile=$_POST['number'];
                         $email=$_POST['e-mail'];
+                        $mo=$_POST['number'];
                         $sql="SELECT * FROM `profiles`where `profile`='$profile'";
                         $op=mysqli_query($conn,$sql);
                         $r=mysqli_fetch_assoc($op);
@@ -216,10 +166,9 @@
                             {
                                 $no=$_SESSION['No'];
                                 $pid=$r['p_id'];
-                                $uql="UPDATE `profile` SET `name`='$name',`profile`='$profile',`p_id`='$pid',`city`='$address',`e-mail`='$email' WHERE `No`=$no";
+                                $uql="UPDATE `profile` SET `name`='$name',`profile`='$profile',`p_id`='$pid',`city`='$address',`e-mail`='$email',`Mobile No.`=$mo WHERE `No`= $no ";
                                 $up=mysqli_query($conn,$uql);
                                 //$u=mysqli_fetch_assoc($up);                                
-                                header("location:http://localhost/php/Css/index.php");
                             }
                             else
                             {
@@ -230,11 +179,12 @@
                                 $t=mysqli_fetch_assoc($sp);
                                 $pid=$t['p_id'];
                                 $no=$_SESSION['No'];
-                                $uql="UPDATE `profile` SET `name`='$name',`profile`='$profile',`p_id`='',`city`='$$address',`e-mail`='$email' WHERE `No`=$no";
+                                $uql="UPDATE `profile` SET `name`='$name',`profile`='$profile',`p_id`='',`city`='$$address',`e-mail`='$email',`Mobile No.`=$mo WHERE `No`=$no";
                                 $up=mysqli_query($conn,$uql);
                                 $u=mysqli_fetch_assoc($up);
-                                header("location:http://localhost/php/Css/index.php");
                             }
+                            header("location:http://localhost/php/Css/index.php");
+                            
                         }
                         /*if(mysqli_num_rows($op)==1)
                         {
@@ -256,12 +206,12 @@
                         }*/
                         else
                         {
-                            $pid=$r['p_id'];
+                           
                             if(mysqli_num_rows($op)==1)
                             {
-                                $hql="INSERT INTO `profile`(`name`, `profile`, `p_id`, `city`,`e-mail`) VALUES ('$name','$profile','$pid','$address','$email')";
+                                $pid=$r['p_id'];
+                                $hql="INSERT INTO `profile`(`name`, `profile`, `p_id`, `city`,`e-mail`,`Mobile No.`) VALUES ('$name','$profile','$pid','$address','$email',$mo)";
                                 $hp=mysqli_query($conn,$hql);
-                                header("location:http://localhost/php/Css/index.php");                            
                             }
                             else
                             {
@@ -269,13 +219,14 @@
                                 $pp=mysqli_query($conn,$pql);
                                 $sql="SELECT * FROM `profiles`where `profile`='$profile'";
                                 $sp=mysqli_query($conn,$sql);
-                                $t=mysqli_fetch_assoc($sp);
+                               // $t=mysqli_fetch_assoc($sp);
                                 $pid=$t['p_id'];
                                 $no=$_SESSION['No'];                                      
-                                $hql="INSERT INTO `profile`(`name`, `profile`, `p_id`, `city`,`e-mail`) VALUES ('$name','$profile','$pid','$address','$email')";
+                                $hql="INSERT INTO `profile`(`name`, `profile`, `p_id`, `city`,`e-mail`,`Mobile No.`) VALUES ('$name','$profile','$pid','$address','$email',$mo)";
                                 $hp=mysqli_query($conn,$hql);
-                                header("location:http://localhost/php/Css/index.php");
                             }
+                            header("location:http://localhost/php/Css/index.php");
+                            
                         }
                       
                     }

@@ -1,56 +1,10 @@
 <html>
     <head>
+    <link href="nav.css" rel="stylesheet">
+    <link href="back.css" rel="stylesheet">
         <title>home page</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
-            body 
-            {
-                margin: 0;
-                font-family: Arial, Helvetica, sans-serif;
-                background-image: url("pro.jpg");
-                background-repeat: no-repeat;
-            }
-            .nav-bar
-            {
-                overflow: hidden;
-                background-color: #333;
-            
-
-            }
-            .hov a:hover 
-            {
-                color: #000;
-                background-color: #fff;
-
-            }
-            .nav-bar a
-            {
-                color: #ddd;
-                text-align: center;
-                float: left;
-                text-decoration: none;
-                padding: 14px 16px;
-                font-size: 17px;
-            }
-            .nav-bar a.active
-            {
-                background-color: rgb(22, 120, 177);
-                color: white;
-            }
-            .nav-bar a.img
-            {
-                float: right;  
-                max-height:10px;
-                
-                padding-top:5px;
-            }
-            .nav-bar .search-bar
-            {
-                
-                margin-top: 11px;
-                margin-left:600px;
-                
-            }
             td a
             {
                 border-style: outset;
@@ -65,22 +19,6 @@
                 color: #026129;
                 font-size: 30px;
         
-            }
-            .lo .lo
-            {
-                float:right;
-                background-color:#333;
-                color:#fff;
-                border-color: #333;
-                margin-right:20px;
-                padding-left:35px;
-                padding-right:35px;
-                padding-top:10px;
-                padding-bottom:15px;
-                border-bottom-left-radius: 12px;
-                border-bottom-right-radius: 12px;
-                border-style: none;
-                font-size: 17px;    
             }
             td a:hover
             {
@@ -108,30 +46,10 @@
                 margin-top: 300px;
                 margin-left: 450px;
             }
-            .lo .lo{
-                float:right;
-                background-color:#333;
-                color:#fff;
-                border-color: #333;
-                margin-right:20px;
-                padding-left:35px;
-                padding-right:35px;
-                padding-top:10px;
-                padding-bottom:15px;
-                border-bottom-left-radius: 12px;
-                border-bottom-right-radius: 12px;
-                border-style: none;
-                font-size: 17px;
-            }
-            .lo .lo:hover
-            {
-                background-color: #fff;
-                color:red;
-            }
             </style>
         </style>
     </head>
-    <body>
+    <body class="action">
         <div class="nav-bar">
             <a class="img" href="about.php" ><img src="LOGO.jpg"></a>
             <div class="hov">

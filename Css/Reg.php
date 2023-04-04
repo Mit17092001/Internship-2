@@ -1,23 +1,26 @@
 <html>
     <head>
-        <style>
+    <link href="app.css" rel="stylesheet">
+    <link href="back.css" rel="stylesheet">
+    
+        <!-- <style>
             h1
             {
                 text-align: center;
                 color: MediumSeaGreen;
                 margin-top:10px;
             }            
-            .ok{
-              margin-top:30px;
-              margin-left:480px;
-              border-style:ridge;
-              border-color:#fff;
-              border-width:10px;
-              margin-right:480px;
-              padding-left:20px;
-              padding-right:20px;
-              background-color: rgba(20,20,20,0.8);
-              color:rgb(255,6,140);
+            .body{
+                margin:auto;
+                margin-top:30px;
+                border-style:ridge;
+                border-color:#fff;
+                border-width:10px;
+                padding-left:20px;
+                padding-right:20px;
+                background-color: rgba(20,20,20,0.8);
+                color:rgb(255,6,140);
+                width:300px;
             }
             .field
             {
@@ -61,6 +64,7 @@
             body{
               font-family: Arial,Helvetica,sans-serif;
               background-image: url("circle.jpg");
+              background-repeat: no-repeat;
             }
            
             .php{
@@ -81,10 +85,10 @@
                 font-size: 15px;
                 
             }
-        </style>
+        </style> -->
     </head>
-    <body>
-        <div class="ok">
+    <body class="reg">
+        <div class="body">
             <h1>Sign-UP Form</h1>
             <form method="post" action="">
                 <div class="field">
@@ -142,7 +146,7 @@
         </div>
             <h3>**If already registered</h3>
             <div class="field">
-                <a href="index.php"><button>Go to login page</button></a>
+                <a href="index.php"><button class="buttonup">Go to login page</button></a>
             </div>
         </div>
     </body>

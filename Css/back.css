@@ -1,0 +1,42 @@
+.index, .reg, .edit
+{
+                background-size: cover;
+                background-image: url("circle.jpg");
+                font-family: Arial,Helvetica,sans-serif;
+}
+.home, .contact, .action
+{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("pro.jpg");
+    background-repeat: no-repeat;
+}
+.about .lo .lo{
+    float:right;
+    background-color:#333;
+    color:#fff;
+    border-color: #333;
+    margin-right:20px;
+    padding-left:35px;
+    padding-right:35px;
+    padding-top:10px;
+    padding-bottom:15px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-style: none;
+    font-size: 17px;
+    
+}
+.about .lo .lo:hover
+{
+    background-color:rgb(227,65,50);
+    color: black;
+}
+.about
+{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    max-width:100%;
+    background-color:rgb(227,65,50);
+    
+}
