@@ -95,8 +95,22 @@
             </div>
         </div>
         <div class="lo">
-            <a href="logout.php"><button class="lo">Logout</button></a>
+           <button onclick="myfunction()" class="lo">Logout</button>
         </div>
+        <script>
+            function myfunction()
+            {
+                if (confirm("Really want to logout !!")) 
+                {
+                    window.location.assign("index.php")
+                } 
+                else 
+                {
+                    window.location.assign("home.php")
+                }
+                
+            }
+        </script>
         <div class="container">
             
                 <a href="Plumber.php"><div class="box">Plumber</div></a>

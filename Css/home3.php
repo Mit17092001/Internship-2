@@ -127,7 +127,10 @@
                 </b>
             </div>
         <div class="body">    
-            
+
+            <?php
+                $email=$_SESSION['e-mail']; 
+            ?>
                     
                 <form method="post" action="">
                     <h2>Personal Details :</h2>
@@ -140,7 +143,7 @@
                     <h2>Contact Details :</h2>
                     <table>
                         <tr><td>Mobile No.:</td><td><div class="field"><input type="text" name="number" required></div></td></tr>
-                        <tr><td>e-mail:</td><td><div class="field"> <input type="text"   name="e-mail" value="<?php echo $_SESSION["e-mail"] ; ?>" required></div></td></tr>
+                        <tr><td>e-mail:</td><td><div class="field"> <input type="text"   name="e-mail" value="<?php echo $email; ?>" required></div></td></tr>
                     </table>
                     <div class="sub">
                         <button type="submit" name="submit">submit</button>

@@ -34,7 +34,7 @@
                     $id=$_SESSION['id'];
                     $name=$_POST['name'];
                     $email=$_POST['email'];
-                    $password=$_POST['password'];
+                    $password=password_hash($_POST['password'],PASSWORD_BCRYPT);
                     $role=$_POST['role'];
                     $hql="SELECT * from `user` where `u_id`='$id'";
                     $hp=mysqli_query($conn,$hql);

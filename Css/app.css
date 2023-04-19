@@ -82,7 +82,7 @@ h1{
     color: MediumSeaGreen;
     margin-top:10px;
 }
-.field select, .field option
+.field select, .field select option
 {
     height: 100%;
     width: 100%;

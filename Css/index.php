@@ -11,88 +11,7 @@
         <title>
             Login
         </title>
-        <!-- <style>
-            body{
-                background-size: cover;
-                background-image: url("circle.jpg");    
-                font-family: Arial,Helvetica,sans-serif;
-            }
-            h1{
-                text-align: center;
-                color: MediumSeaGreen;
-                margin-top:10px;
-            }
-
-            .text{
-                border-color:#000;
-                border-style: groove;
-                margin-top:5px;
-            }
-            .body{
-               
-                border-style:ridge;
-                border-color:#fff;
-                padding-left:20px;
-                width:300px;
-                padding-right:20px;
-                padding-bottom: 10px;
-                background-color: rgba(20,20,20,0.8);
-                border-width: 10px;
-                margin: auto;
-                margin-top: 50px;
-                color: rgb(255,6,140);    
-            }
-            .php{
-                color:rgb(255,255,255);
-            }
-            .field
-            {    
-                width:100%;
-                height:50px;
-                margin-bottom:15px;
-               
-            }
-            .field input 
-            {
-                height: 100%;
-                width: 100%;
-                outline: none;
-                padding-left: 15px;
-                border-radius: 5px;
-                border: 1px solid lightgrey;
-                border-bottom-width: 2px;
-                font-size: 15px;
-              
-            }
-            .field .buttonup
-            {
-                height: 100%;
-                width: 100%;
-                outline: none;
-                padding-left: 15px;
-                border-radius: 5px;
-                border: 1px solid lightgrey;
-                border-bottom-width: 2px;
-                font-size: 15px;
-              
-            }
-            .field .button
-            {
-                background-color: MediumSeaGreen;
-                height: 100%;
-                width: 100%;
-                outline: none;
-                padding-left: 15px;
-                border-radius: 5px;
-                border: 1px solid MediumSeaGreen;
-                border-bottom-width: 2px;
-                font-size: 15px;
-                margin-top:15px;
-              
-
-            }
-            
-        </style> -->
+        
     </head>
     <body class="index">
         
@@ -119,14 +38,14 @@
                 $nErr=$pErr="";
                 $email=$_POST['email'];
                 $password=$_POST['password'];
-                $sql="SELECT * from `user` where `e-mail`='$email'";
+                $sql="SELECT * from `user` where `e-mail`='$email' && `is_verified`='1'";
                 $op=mysqli_query($conn,$sql);
                 $r=mysqli_fetch_assoc($op);
                 if(mysqli_num_rows($op)==1)
                 {
                     if($r['Role']==3 || $r['Role']==1)
                     {            
-                        if($password == $r['password'])
+                        if(password_verify($password,$r['password']))
                         {
                         // $_SESSION["name"]=$r['name'];
                             $_SESSION["e-mail"]=$r['e-mail'];
@@ -150,7 +69,7 @@
                         $y=mysqli_fetch_assoc($lp);
                         if(mysqli_num_rows($lp)==1)
                         {
-                            if($password == $r['password'])
+                            if(password_verify($password,$r['password']))
                             {
                                 $_SESSION["e-mail"]=$r['e-mail'];
                                 header("location:http://localhost/php/Css/home.php");
@@ -165,7 +84,7 @@
                         else
                         {
                         
-                            if($password == $r['password'])
+                            if(password_verify($password,$r['password']))
                             {
                                 $_SESSION["name"]=$r['name'];
                                 $_SESSION["e-mail"]=$r['e-mail'];
@@ -181,57 +100,23 @@
                               
                             }
                         }
-                    
-                        
+                    }
                 }
-            }
 
-            else
-            {
-                echo "**invalid e-mail";
-            } 
-            }
-                /*
                 else
                 {
-                    if($password != $r['password'])
-                    {
-                        $pErr="*invalid password";
-                        echo $pErr;      
-                        echo "<br>";
-                
-                        if($pErr!="")
-                            {
-                                ?>
-                                <script>
-                                    $(document).ready(function(){
-                                        $('#log').mouseenter(function(){
-                                            alert("Please enter valid details");
-                                        })
-                                    })
-                                </script>
-                                <?php
-                            }
-                        else
-                            {
-                                echo "Details are ok";
-                                echo "<br>";
-                            }
-                    }
-                    else
-                    {
-                        if($nErr!="" || $pErr!="")
+                    $mpl="SELECT * FROM `user` where `e-mail`='$email'";
+                    $mp=mysqli_query($conn,$mpl);
+                    if(mysqli_num_rows($mp)==0)
                         {
-                            echo "*Please enter valid details";
-                            echo "<br>";
+                            echo "**invalid e-mail";
                         }
                         else
                         {
-                            echo "Details are ok";
-                            echo "<br>";
+                            echo "**User is not verified";
                         }
-                    }
-                }*/
+                } 
+            }
             ?>
 </div>
         <br><br>
